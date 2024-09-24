@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 650px;
+    
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+  
+}
+
+#main-image {
+    width: 400px;
+    height:600px;
+    /* max-height: 1000px; */
+    object-fit:cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#main-image:hover {
+    transform: scale(1.02);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.thumbnails {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnails img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s, border 0.3s;
+    border: 2px solid transparent;
+}
+
+.thumbnails img:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    border: 2px solid #2196F3;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+.lightbox.show {
+    opacity: 1;
+}
